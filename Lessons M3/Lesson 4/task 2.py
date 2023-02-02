@@ -4,7 +4,7 @@ import os
 from tkinter import messagebox
 
 window = tk.Tk()
-window.title("Registration")
+window.title("Регистрация")
 window.geometry("600x600")
 
 reg = []
@@ -20,7 +20,7 @@ def registration():
         "Age": age_entry.get(),
         "Address": address_entry.get(),
         "Days": days_entry.get(),
-        "Payment": f"{int(days_entry.get()) * 15}$"
+        "Payment": f"{int(days_entry.get()) * 300}$"
     }
     reg.append(info)
     header = ["Fullname", "Age", "Address", "Days", "Payment"]
@@ -37,31 +37,31 @@ def registration():
 
 
 # Full name
-fullname_label = tk.Label(window, text="Enter full name: ")
+fullname_label = tk.Label(window, text="Введите полное имя: ")
 fullname_label.grid(column=0, row=0)
 fullname_entry = tk.Entry(window)
 fullname_entry.grid(column=1, row=0)
 
 # Age
-age_label = tk.Label(window, text="Enter age: ")
+age_label = tk.Label(window, text="Введите возраст: ")
 age_label.grid(column=0, row=1)
 age_entry = tk.Entry(window)
 age_entry.grid(column=1, row=1)
 
 # Address
-address_label = tk.Label(window, text="Enter address: ")
+address_label = tk.Label(window, text="Введиет адресс: ")
 address_label.grid(column=0, row=3)
 address_entry = tk.Entry(window)
 address_entry.grid(column=1, row=3)
 
 # Days
-days_label = tk.Label(window, text="How many days: ")
+days_label = tk.Label(window, text="на сколько дней хотите забронировать: ")
 days_label.grid(column=0, row=4)
 days_entry = tk.Entry(window)
 days_entry.grid(column=1, row=4)
 
 # Price
-price_label = tk.Label(window, text="One days 15$")
+price_label = tk.Label(window, text="Один день стоит 300$")
 price_label.grid(column=1, row=5)
 
 # Button registration
