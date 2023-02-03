@@ -3,6 +3,7 @@ from pytube import YouTube
 link = input("YouTube link:")
 video = YouTube(link)
 quality = input("качествно видео: (High/Low)")
+output = None
 if quality == "High":
     output = video.streams.get_highest_resolution()
 if quality == "Low":

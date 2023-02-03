@@ -27,7 +27,7 @@ def registration():
     try:
         with open("registrations.csv", "a") as f:
             f = csv.DictWriter(f, header)
-            if os.path.getsize("registrations.csv")  == 0:
+            if os.path.getsize("registrations.csv") == 0:
                 f.writeheader()
             f.writerows(reg)
     except FileNotFoundError as e:
