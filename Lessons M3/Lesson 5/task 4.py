@@ -1,6 +1,6 @@
 from pytube import YouTube
 
-link = input("YouTube link:")
+link = input("Input youtube link:")
 video = YouTube(link)
 quality = input("качествно видео: (High/Low)")
 output = None
