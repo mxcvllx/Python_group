@@ -2,4 +2,6 @@
 task 4
 
 
-![изображение](https://user-images.githubusercontent.com/122612295/216580383-a334cc3a-4996-462d-a9f0-9d7a664a48e0.png)
+![изображение](https://user-images.githubusercontent.com/122612295/216771616-b496fc86-7e70-4d81-b9b4-9e83e76acb4b.png)
+
+
