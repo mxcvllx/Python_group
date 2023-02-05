@@ -1,0 +1,4 @@
+If the file content is as follows:
+Updated information
+As simplified by official websites.
+The EUCount() function should display the output as
