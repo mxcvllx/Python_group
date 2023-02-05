@@ -1,5 +1,7 @@
 from tkinter import *
 from googletrans import Translator
+import os
+import csv
 
 file_path = 'translate.csv'
 
@@ -17,6 +19,16 @@ root.title('Translator')
 root['bg'] = 'black'
 
 translator = Translator()
+
+
+def history():
+    with open('translate.csv', "a", newline="\n") as f:
+
+        header = ["Trans_word", "DOJ"]
+        dict_writer = csv.DictWriter(f, header)
+        if os.path.getsize('translate.csv') == 0:
+            dict_writer.writeheader()
+
 
 label = Label(root, fg='white', bg="black", text='Введите текст на английском')
 label.place(relx=0.5, y=30, anchor=CENTER)

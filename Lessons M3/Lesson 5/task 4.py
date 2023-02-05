@@ -1,12 +1,15 @@
 from pytube import YouTube
 
-link = input("Input youtube link:")
-video = YouTube(link)
-quality = input("качествно видео: (High/Low)")
-output = None
-if quality == "High":
-    output = video.streams.get_highest_resolution()
-if quality == "Low":
-    output = video.streams.get_lowest_resolution()
+link = input('Введите ссылка на видео ютуб ->')
 
-output.download()
+yt = YouTube(link)
+
+print(f"youtube video title ->{yt.title}")
+print(f"number of views ->{yt.views}")
+print(f"video duration ->{yt.length}")
+
+y = yt.streams.get_highest_resolution()
+y.download()
+print("loading is complete")
+
+

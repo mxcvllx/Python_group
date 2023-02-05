@@ -3,7 +3,7 @@ import os.path
 import tkinter as tk
 from datetime import datetime
 
-from todo.task import Task
+from task import Task
 from message import TASK_NAME_LABEL, ADD_BTN
 
 window = tk.Tk()
