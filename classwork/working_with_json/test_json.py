@@ -2,11 +2,11 @@ import json
 
 import requests
 
-KEY = "R7PdST1zLADXga7Cx1xR3Sqn2gmPvSpl"
-url = f"https://api.freecurrencyapi.com/v1/latest?apikey=YOUR-APIKEY{KEY}"
+KEY = "ZQ48KUlOHW4H7bnsvgNlF02Z06kwKvo"
+url = f"https://api.tomorrow.io/v4/weather/forecast?location=newyork&apikey{KEY}"
 
-resp = requests.get(url)
+headers = {"accept": "aplication/json"}
 
+response = requests.get(url, header=headers)
 
-with open('weather.json', 'w') as f:
-    json.dump(json.loads(resp.text), f)
+print(resp.text)

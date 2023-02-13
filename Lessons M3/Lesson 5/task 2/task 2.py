@@ -8,7 +8,7 @@ file_path = 'translate.csv'
 
 def tran():
     text = t.get('1.0', END)
-    a = translator.translate(text, dest='uz')
+    a = translator.translate(text, dest='ru')
     t1.delete('1.0', END)
     t1.insert('1.0', a.text)
 
