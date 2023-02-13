@@ -4,7 +4,9 @@ STARTMSG = "Hi, i am translator bot. I use python and google API. "
 CHOOSEMSG = "Choose language"
 
 LANGDICT = {
-
+    'en': 'english',
+    'ru': 'russian',
+    'uz': 'uzbek',
     'sq': 'albanian',
     'ar': 'arabic',
     'be': 'belarusian',
@@ -16,7 +18,6 @@ LANGDICT = {
     'cs': 'czech',
     'da': 'danish',
     'nl': 'dutch',
-    'en': 'english',
     'eo': 'esperanto',
     'et': 'estonian',
     'tl': 'filipino',
@@ -45,7 +46,6 @@ LANGDICT = {
     'pl': 'polish',
     'pt': 'portuguese',
     'ro': 'romanian',
-    'ru': 'russian',
     'sr': 'serbian',
     'sk': 'slovak',
     'sl': 'slovenian',
