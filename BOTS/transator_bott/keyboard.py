@@ -1,5 +1,7 @@
-from BOTS.Tanslator_bor import config as cfg
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+import config as cfg
+from aiogram.types import ReplyKeyboardRemove, \
+    ReplyKeyboardMarkup, KeyboardButton, \
+    InlineKeyboardMarkup, InlineKeyboardButton
 a = 0
 keyss = []
 keyb = InlineKeyboardMarkup()
