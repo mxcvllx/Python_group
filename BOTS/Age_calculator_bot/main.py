@@ -1,36 +1,30 @@
-import telebot
-from telebot.types import BotCommand
-from environs import Env
-from datetime import datetime, date
+import logging
 
-env = Env()
-env.read_env()
-BOT_TOKEN = env("BOT_TOKEN")
-bot = telebot.TeleBot(BOT_TOKEN)
+from aiogram import *
 
+API_TOKEN = '6247737560:AAFq5JU0vDqTZxFm01S36lk1bsuS8Rwu6zY'
 
-@bot.message_handler(commands=["start"])
-def send_welcome(message):
-    user = message.from_user
-    answer = f"HEllO {user.first_name}"
-    answer += "\nEnter your birthyear (exm: 2000):"
-    bot.reply_to(message, answer)
+logging.basicConfig(level=logging.INFO)
+
+bot = Bot(token=API_TOKEN)
+dp = Dispatcher(bot)
 
 
-@bot.message_handler(func=lambda message: True)
-def calculate_age(message):
-    today = date.today()
-    a = int(message)
-    age = (today.year - message)
-    bot.reply_to(a, f"Your Age: {age}")
+@dp.message_handler(commands=['start', 'help'])
+async def send_welcome(message: types.Message):
+    await message.reply("hello\n i find your age")
 
 
-def my_commands():
-    return [
-        BotCommand("/start", "Start bot")
-    ]
+@dp.message_handler(commands=['age'])
+async def age(message: types.Message):
+    await message.answer("Enter birth year:")
 
 
-if __name__ == "__main__":
-    bot.set_my_commands(commands=my_commands())
-    bot.polling()
+@dp.message_handler()
+async def age_calc(message: types.Message):
+    result = 2023 - int(message.text)
+    await message.answer(f"Your age: {result}")
+
+
+if __name__ == '__main__':
+    executor.start_polling(dp, skip_updates=True)
