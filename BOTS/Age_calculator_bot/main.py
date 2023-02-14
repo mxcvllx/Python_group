@@ -1,30 +1,26 @@
-import logging
+import telebot
+from environs import Env
 
-from aiogram import *
-
-API_TOKEN = '6247737560:AAFq5JU0vDqTZxFm01S36lk1bsuS8Rwu6zY'
-
-logging.basicConfig(level=logging.INFO)
-
-bot = Bot(token=API_TOKEN)
-dp = Dispatcher(bot)
+env = Env()
+env.read_env()
+BOT_TOKEN = env("BOT_TOKEN")
+bot = telebot.TeleBot(BOT_TOKEN)
 
 
-@dp.message_handler(commands=['start', 'help'])
-async def send_welcome(message: types.Message):
-    await message.reply("hello\n i find your age")
+@bot.message_handler(commands=["start"])
+def welcome_message(message):
+    chat_id = message.chat.id
+    user = message.from_user
+    bot.send_message(chat_id,
+                     f"Привет {user.first_name} \n"
+                     f"Задача этого бота находить ваш возраст")
 
 
-@dp.message_handler(commands=['age'])
-async def age(message: types.Message):
-    await message.answer("Enter birth year:")
+@bot.message_handler(func=lambda message: int)
+def meesage_age(message):
+    ms = message.text
+    bot.reply_to(message, f"Ваш возраст равна --> {2023 - int(ms)} годам.")
 
 
-@dp.message_handler()
-async def age_calc(message: types.Message):
-    result = 2023 - int(message.text)
-    await message.answer(f"Your age: {result}")
-
-
-if __name__ == '__main__':
-    executor.start_polling(dp, skip_updates=True)
+if __name__ == "__main__":
+    bot.infinity_polling()
