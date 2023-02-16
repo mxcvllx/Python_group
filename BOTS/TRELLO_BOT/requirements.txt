@@ -1,2 +1,0 @@
-environs==9.5.0
-pytelegrambotapi==4.10.0
