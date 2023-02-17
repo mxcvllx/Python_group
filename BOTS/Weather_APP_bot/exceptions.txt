@@ -1,5 +1,0 @@
-[Errno 2] No such file or directory: 'tashkent.json'       16:12:49 02/16/2023
-[Errno 2] No such file or directory: 'tashkent.json'       16:14:22 02/16/2023
-[Errno 2] No such file or directory: 'tashkent.json'       16:15:06 02/16/2023
-[Errno 2] No such file or directory: 'tashkent.json'       16:18:53 02/16/2023
-[Errno 2] No such file or directory: 'tashkent.json'       16:20:52 02/16/2023
