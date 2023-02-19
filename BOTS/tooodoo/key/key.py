@@ -21,7 +21,7 @@ languages_btn.add(
 )
 
 
-def language(value):
+def get_language(value):
     languages_inline_btn = InlineKeyboardMarkup()
     languages_inline_btn.add(
         InlineKeyboardButton(list(LANGUAGES.keys())[0],

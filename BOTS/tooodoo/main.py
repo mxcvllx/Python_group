@@ -4,10 +4,10 @@ import csv
 from telebot import custom_filters
 from telebot.storage import StateMemoryStorage
 from telebot.types import BotCommand, ReplyKeyboardRemove
-from key.keyboard import phone, csv_file, language
+from key.key import phone, csv_file, languages_btn
 from key.message import messages
 from key.state import StudentRegistrationForm
-from key.chat import Chat
+from chatt import Chat
 from key.utils import write_row_to_csv, get_fullname
 from key.save_info import Save
 
@@ -80,7 +80,7 @@ def phone_get(message):
 
 @bot.message_handler(state=StudentRegistrationForm.age)
 def age_get(message):
-    bot.send_message(message.chat.id, 'Выбрать язык:', reply_markup=language("course"))
+    bot.send_message(message.chat.id, 'Выбрать язык:', reply_markup=languages_btn("course"))
     bot.set_state(message.from_user.id, StudentRegistrationForm.language, message.chat.id)
     with bot.retrieve_data(message.from_user.id, message.chat.id) as data:
         data['age'] = message.text
