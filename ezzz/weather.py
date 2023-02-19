@@ -1,16 +1,10 @@
 from datetime import datetime
 import json
-
-from environs import Env
-
 import requests
-
-env = Env()
-env.read_env()
 
 
 class WeatherManager:
-    API_KEY = env("API_KEY")
+    API_KEY = "855b8da7808a0d12dd98639908379fd8"
 
     def __init__(self, city=None):
         self.city = city
@@ -55,23 +49,7 @@ class WeatherManager:
         return data
 
     def get_daily_temperature(self):
-        # data = []
-        # for day in self.get_daily_data():
-        #     day_values = day.get("values")
-        #     average_temperature = None
-        #     if day_values:
-        #         average_temperature = day_values.get("temperatureAvg")
-        #     day_date = datetime.strptime(day.get("time"), "%Y-%m-%dT%H:%M:%SZ")
-        #     data.append({
-        #         "day": day_date.strftime("%Y.%m.%d"),
-        #         "average_temperature": average_temperature,
-        #         "hours": self.get_day_hours_temperature_with_time(day_date)
-        #     })
-        #
-        # return data
-
-        # From JSON file
-        with open("../api/weather.json") as f:
+        with open("./weather.json", encoding="utf8") as f:
             return json.load(f)
 
 
