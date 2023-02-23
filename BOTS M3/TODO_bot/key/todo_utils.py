@@ -1,4 +1,4 @@
-from ezzz.weather import WeatherManager
+from x_files.weather import WeatherManager
 import csv
 import os
 

@@ -1,11 +1,11 @@
 import telebot
-import messages
+from TRELLO_BOT import messages
 from environs import Env
 from state import CreateNewTask
 from trello import TrelloManager
 from utils import write_chat_to_csv, check_chat_id_from_csv, \
     get_member_tasks_message, get_trello_username_by_chat_id
-from keyboards import get_boards_btn, get_inline_boards, get_inline_lists_btn, \
+from keyboards import get_inline_boards, get_inline_lists_btn, \
     get_list_btn, get_member_btn
 
 env = Env()
