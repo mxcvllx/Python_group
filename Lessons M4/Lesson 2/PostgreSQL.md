@@ -2,7 +2,7 @@ SELECT PART1
 
 1. Categories jadval barcha ustun ma’lumotlarini bilan qaytaring
    
-   '''sql
+   
    select * from categories
    
    **Result**
