@@ -1,0 +1,19 @@
+
+select order_id, contact_name,
+    orders.customer_id as Buyirtma_taqami,
+    orders.customer_id as Xaridor_raqami
+from orders
+inner join customers on
+orders.customer_id = customers.customer_id
+order by orders.customer_id
+
+
+
+select order_id, contact_name,
+    ord.customer_id as Buyirtma_taqami,
+    cus.customer_id as Xaridor_raqami
+from orders ord
+inner join customers cus
+on ord.customer_id = cus.customer_id
+where ord.customer_id like 'A%'
+order by ord.customer_id
