@@ -1,4 +1,4 @@
 output = print
 
-output('первый урок прошёл тем что мы устанавливали датабазу')
+output('the first lesson passed by the fact that we installed the database')
 output('PostgreSQL')
