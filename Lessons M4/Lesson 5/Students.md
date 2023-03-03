@@ -1,3 +1,4 @@
+```sql
 create table Students
 (
     id             serial,
@@ -15,3 +16,4 @@ create table Students
     region_id      integer,
     group_id       integer
 );
+```

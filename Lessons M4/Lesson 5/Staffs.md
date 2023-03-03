@@ -1,3 +1,4 @@
+```sql
 create table Staffs
 (
     laboratory_assistant varchar(100),
@@ -6,3 +7,4 @@ create table Staffs
     teacher varchar(100),
     Professor varchar(100)
 );
+```

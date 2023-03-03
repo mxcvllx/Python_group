@@ -1,3 +1,4 @@
+```sql
 create table Departments
 (
     id serial,
@@ -6,3 +7,4 @@ create table Departments
     quality_of_education varchar(100),
     automated_tracking varchar(100)
 );
+```
