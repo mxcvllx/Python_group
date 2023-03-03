@@ -1,0 +1,104 @@
+create table if not exists drivers
+(
+    id           serial,
+    first_name   varchar(100) not null,
+    last_name    varchar(100) not null,
+    phone_number varchar(15)  not null,
+    dob          date,
+    balance      decimal,
+    licence      char(3)      not null,
+    car_id integer
+);
+
+create table if not exists cars(
+    id serial,
+    name varchar(100),
+    model varchar(50),
+    color varchar(50),
+    number varchar(50),
+    type varchar(50)
+);
+
+create table if not exists users
+(
+    id           serial,
+    first_name   varchar(100) not null,
+    last_name    varchar(100) not null,
+    phone_number varchar(15)  not null,
+    dob          date,
+    balance      decimal
+);
+
+create table if not exists orders(
+    id serial,
+    user_id integer,
+    car_id integer,
+    amout decimal,
+    created_date timestamptz
+);
+
+
+
+create table Departments
+(
+    id serial,
+    departement_name varchar(100)not null,
+    Educational_Programs varchar(100),
+    quality_of_education varchar(100),
+    automated_tracking varchar(100)
+);
+
+create table Staffs
+(
+    laboratory_assistant varchar(100),
+    Senior_Assistant varchar(100),
+    assistant varchar(100),
+    teacher varchar(100),
+    Professor varchar(100)
+);
+
+create table Teachers
+(
+    teacher varchar(100),
+    Professor varchar(100),
+    Senior_Lecturer varchar(100),
+    assistant_professor varchar(100),
+    director varchar(1)
+);
+
+create table Students
+(
+    id             serial,
+    first_name     varchar(100)        not null,
+    last_name      varchar(100)        not null,
+    username       varchar(100) unique not null,
+    phone          varchar(15) unique  not null,
+    dob            date,
+    date_joined    date,
+    date_graduated date,
+    is_graduated   boolean default false,
+    is_active      boolean default true,
+    gpa            real    default 0,
+    grade          integer             not null,
+    region_id      integer,
+    group_id       integer
+);
+
+create table Groups
+(
+    name_groups varchar(50),
+    groups_id serial,
+    members_group varchar(50)
+);
+
+create table Subjects
+(
+    subject_name varchar(100),
+    subjects_count integer
+);
+
+create table Regions
+(
+    region_name varchar(50),
+    region_id serial
+)
