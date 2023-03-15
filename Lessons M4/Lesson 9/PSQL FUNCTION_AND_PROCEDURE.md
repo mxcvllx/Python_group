@@ -14,8 +14,10 @@ $$;
 
 select aircraft_code, get_model_value(model, lang := 'en'), range
 from aircrafts_data;
-
 ```
+**RESULT**
+
+![img_2.png](img_2.png)
 
 
 2. airports_data table ma'lumotlaridan foydalanib timezone kiritilganda ma'lumot qaytaradigan funksiya yarating.
@@ -35,6 +37,11 @@ $$;
 
 select airport_timezone('Asia/Yekaterinburg');
 ```
+
+**RESULT**
+
+![img_1.png](img_1.png)
+
 
 3. airports_data table ma'lumotlaridan foydalanib city ustunda json ma'lumot value larini katta harflarda funksiya yarating
 
@@ -57,3 +64,7 @@ $$;
 select city()
 from bookings;
 ```
+
+**RESULT**
+
+![img.png](img.png)
