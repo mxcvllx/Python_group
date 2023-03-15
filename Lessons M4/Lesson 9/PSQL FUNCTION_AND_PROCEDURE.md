@@ -38,7 +38,6 @@ create function airport_timezone(tmz varchar)
 as
 $$
 begin
-    return query
     select * from airports_data
     where timezone = tmz;
 end;
