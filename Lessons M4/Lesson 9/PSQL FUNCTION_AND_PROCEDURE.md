@@ -2,30 +2,19 @@ LESSONS
 1. aircrafts_data table ma'lumotlarida model ustunda json turli en va ru uchun ma'lumotlar berilgan. en yoki ru kalit kiritilganda value sini qaytaradigan funksiya yarating.
 
 ```sql
-create or replace function en_ru_func(f varchar)
-    returns varchar
+create or replace function get_model_value(model jsonb, lang varchar)
+    returns text
     language plpgsql
 as
 $$
-declare
-    result varchar := ' ';
 begin
-    if f = 'en' then
-        select model['en']
-        into result
-        from aircrafts_data;
-        return result;
-    elseif f = 'ru' then
-        select model['ru']
-        into result
-        from aircrafts_data;
-        return result;
-    end if;
+    return model ->> lang;
 end;
 $$;
 
-select en_ru_func(f := 'en')
-from bookings;
+select aircraft_code, get_model_value(model, lang := 'en'), range
+from aircrafts_data;
+
 ```
 
 
