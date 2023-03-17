@@ -1,0 +1,31 @@
+create table logs
+(
+    id         serial primary key,
+    name       varchar(255),
+    detail     text,
+    old_data   json,
+    new_data   json,
+    table_name varchar(255)
+);
+
+create trigger airport_update_trigger
+    after update
+    on airports_data
+    for each row
+    execute procedure;
+
+
+create or replace function airport_update_trigger_func()
+returns trigger
+language plpgsql
+as
+$$
+BEGIN
+if old <> new then
+    insert into logs (name, detail, old_data, new_data, table_name)
+    values (
+             'Updated.', OLD::json, NEW::json, 'airports_data');
+end if;
+return
+end;
+$$
