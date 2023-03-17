@@ -41,6 +41,7 @@ from seats f
             inner join tickets tf on tf.contact_data = tf.contact_data;
 
 select * from seats_or_tickets
+
 ```
 
 **RESULT**
