@@ -1,0 +1,87 @@
+create table logs
+(
+    id         serial primary key,
+    name       varchar(255),
+    detail     text,
+    old_data   json,
+    new_data   json,
+    table_name varchar(255)
+);
+
+create or replace trigger airport_update_trigger
+    after update or delete
+    on airports_data
+    for each row
+execute procedure airport_update_trigger_func();
+
+
+create or replace function airport_update_trigger_func()
+    returns trigger
+    language plpgsql
+as
+$$
+BEGIN
+    if tg_op = 'UPDATE' THEN
+        insert into logs(detail, old_data, new_data, table_name)
+        values ('Updated.', row_to_json(OLD), row_to_json(NEW), 'airports_data');
+        return NEW;
+    elsif tg_op = 'DELETE' THEN
+        insert into logs(detail, old_data, table_name)
+        values ('DELETED.', row_to_json(OLD), 'airports_data');
+        return OLD;
+    END IF;
+end;
+$$;
+
+
+
+create or replace function tickets_update_data()
+    returns trigger
+    language plpgsql
+as
+$$
+begin
+    if tg_op = 'UPDATE' then
+        insert into logs(detail, old_data, new_data, table_name)
+        values ('Update.', row_to_json(old), row_to_json(new), 'tickets');
+        return new;
+    elseif tg_op = 'DELETE' then
+        insert into logs(detail, old_data, table_name)
+        values ('DELETED', row_to_json(OLD), 'tickets');
+        return old;
+    end if;
+end;
+
+$$;
+
+create or replace function bookings_new()
+    returns trigger
+    language plpgsql
+as
+$$
+begin
+    if tg_op = 'NEW' then
+        insert into logs(detail, new_data, table_name)
+        values ('New.', row_to_json(new), 'bookings');
+        return new;
+    end if;
+end;
+
+$$;
+
+
+create or replace function _delet()
+    returns trigger
+    language plpgsql
+as
+$$
+begin
+    if tg_op = 'DELETE' then
+        insert into logs(detail, old_data, table_name)
+        values ('DELETED', row_to_json(OLD), 'tickets');
+        return old;
+    end if;
+end;
+$$;
+
+
