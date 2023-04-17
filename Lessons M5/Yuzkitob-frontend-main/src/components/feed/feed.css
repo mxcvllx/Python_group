@@ -1,0 +1,21 @@
+.feed {
+  flex: 5;
+  /* width: 800px; */
+}
+
+.feedWrapper {
+  padding: 20px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.feedWrapper::-webkit-scrollbar {
+  width: 0;
+}
+
+.noPosts {
+  text-align: center;
+  color: #777;
+  user-select: none;
+  cursor: auto;
+}

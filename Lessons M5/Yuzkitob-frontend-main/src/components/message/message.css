@@ -1,0 +1,112 @@
+.message {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.messageTop {
+  display: flex;
+}
+
+.messageImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.messageImg.own {
+  margin-left: 15px;
+}
+
+.messageText {
+  background-color: #1877f2;
+  padding: 15px 10px 10px 10px;
+  max-width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: 1px 5px 30px -13px rgba(105, 107, 255, 0.61);
+  border-radius: 5px 20px 20px;
+  background: var(--darkMainColor);
+  color: var(--lightMainColor);
+}
+
+.own .messageText {
+  border-radius: 20px 5px 20px 20px;
+}
+
+.dark-version .messageText {
+  background: var(--darkRightBgColor);
+  color: var(--darkColorPost);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark-version .own .messageText {
+  background: transparent;
+}
+
+
+.messageBottom {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #333;
+  text-align: end;
+}
+
+.dark-version .messageBottom {
+  color: var(--lightBgListItemColor);
+}
+
+.messageBottom.own {
+  text-align: end;
+  color: var(--lightBgListItemColor);
+}
+
+.message.own .messageBottom.own {
+  color: var(--darkBgListItemColor);
+}
+
+.message.own {
+  align-items: flex-end;
+}
+
+.message.own .messageText {
+  background-color: var(--darkMainColor);
+  color: var(--darkRightBgColor);
+}
+
+.messageChatImg {
+  width: 100%;
+  max-height: 300px;
+  display: block;
+  background: #000;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.gifContainer {
+  position: relative;
+}
+
+.gifIndicator {
+  opacity: 0;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  padding: 5px;
+  border-radius: 50px;
+  background: rgba(119, 119, 119, 0.5);
+  color: #fff;
+  transition: 0.4s;
+  font-size: 13px;
+}
+
+.messageChatImg:hover+.gifIndicator {
+  opacity: 1;
+}
+.msgText{
+  padding-left: 5px;
+}

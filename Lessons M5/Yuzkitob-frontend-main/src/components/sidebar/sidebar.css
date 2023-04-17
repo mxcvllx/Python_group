@@ -1,0 +1,168 @@
+.sidebar {
+  width: 300px;
+  padding: 20px;
+  height: 100vh;
+  overflow-y: hidden;
+  position: sticky;
+  top: 70px;
+  user-select: none;
+  box-shadow: 1px 5px 32px -15px var(--lightMainColor);
+  border-right: 1px solid var(--lightMainColor);
+  background: var(--lightBgColor);
+  margin: 0;
+}
+
+.dark-version .sidebar {
+  box-shadow: 1px 5px 32px -15px var(--darkMainColor);
+  border-right: 1px solid var(--darkMainColor);
+  background: var(--darkBgColor);
+  color: white;
+}
+
+
+.sidebarList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.sidebarListItem {
+  display: flex;
+  align-items: center;
+  padding: 15px 15px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 1s;
+  box-shadow: 2px 2px 10px 1px var(--lightBorderShadow);
+  background: var(--lightBgListItemColor);
+  outline: 1px solid var(--lightListOutlineColor);
+}
+
+.dark-version .sidebarListItem {
+  /* box-shadow: 2px 2px 1px 1px var(--darkBorderShadow); */
+  background: var(--darkBgListItemColor);
+  outline: 1px solid var(--darkListOutlineColor);
+}
+
+.sidebarListItem:hover {
+  transform: translate(5%, 10%);
+  border-radius: 50px;
+  outline: 1px solid rgb(0, 0, 0);
+  box-shadow: 2px 2px 10px 3px var(--lightMainColor);
+}
+
+.dark-version .sidebarListItem:hover {
+  box-shadow: 2px 2px 1px 1px var(--darkMainColor);
+  outline: 1px solid var(--darkMainColor);
+}
+
+.sidebarIcon {
+  margin-right: 15px;
+  color: var(--lightMainColor);
+}
+
+.dark-version .sidebarIcon {
+  color: var(--darkMainColor);
+}
+
+.sidebarButton {
+  width: 150px;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.sidebarHr {
+  margin: 20px 0;
+}
+
+.sidebarFriendList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebarLogo {
+  width: 100%;
+  display: block;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-style: italic;
+  font-weight: bold;
+  color: var(--lightMainColor);
+}
+
+.sidebarnotResponsiveLogo {
+  display: block;
+}
+
+.sidebarResponsiveLogo {
+  display: none;
+}
+
+
+.dark-version .sidebarLogo {
+  color: var(--darkMainColor);
+}
+
+.sidebarListItem.sidebarListItemBadge {
+  position: relative;
+}
+
+.sidebarNotificationBadge {
+  height: 30px;
+  background: rgb(0, 102, 255);
+  border-radius: 50px;
+  right: 15px;
+  position: absolute;
+  display: block;
+  text-align: center;
+  align-items: center;
+  padding: 5px 10px;
+  font-size: 17px;
+  color: #fff;
+}
+
+.sidebarLink {
+  text-decoration: none;
+  color: var(--darkColor);
+  outline: none;
+}
+
+.exitApp {
+  box-shadow: 2px 2px 10px 1px var(--lightBorderShadow);
+  background: var(--lightBgListItemColor);
+  outline: 1px solid rgba(255, 0, 0, 0.3) !important;
+}
+
+
+@media only screen and (max-width: 900px) {
+  .sidebar {
+    width: 100px;
+  }
+
+  .sidebarListItem {
+    border-radius: 50%;
+  }
+
+  .sidebarListItemText {
+    display: none;
+  }
+
+  .sidebarResponsiveLogo {
+    display: block;
+  }
+
+  .sidebarnotResponsiveLogo {
+    display: none;
+  }
+
+  .sidebarNotificationBadge {
+    top: -10px;
+    right: -10px;
+  }
+}

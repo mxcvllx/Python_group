@@ -1,0 +1,114 @@
+.postBottomLeft {
+  width: 70%;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.bottomReactionButtonsContainer {
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.bottomReactionButton {
+  display: none;
+  transition: visibility 0s, opacity 1s linear;
+  margin-top: 5px;
+  margin-right: 5px;
+  align-items: center;
+  padding: 2px 5px;
+  border-radius: 50px;
+  cursor: pointer;
+  padding-right: 10px;
+  border: 1px solid white;
+  color: var(--darkColorPost);
+  background: rgba(0, 4, 66, 0.795);
+}
+
+.selectedReaction {
+  background: rgb(0, 17, 255) !important;
+}
+
+.dark-version .selectedReaction {
+  background: rgb(0, 4, 59);
+}
+
+.reactIcon {
+  width: 20px;
+  height: 20px;
+  font-size: 20px !important;
+  object-fit: cover;
+  cursor: pointer;
+  margin-right: 2px;
+  border: none;
+  background: none;
+}
+
+.reactIconShow {
+  width: 30px;
+  height: 30px;
+  font-size: 20px !important;
+  object-fit: cover;
+  cursor: pointer;
+  margin-right: 2px;
+  border: none;
+  background: none;
+  transition: 0.5s;
+}
+
+.reactIconShow:hover {
+  transform: scale(1.3);
+}
+
+.postLikeCounter {
+  font-size: 17px;
+  margin: 0;
+  padding: 0;
+}
+
+.postBottomRight {
+  height: 100%;
+  flex: 1;
+  text-align: right;
+}
+
+.postCommentText {
+  flex: 1;
+  cursor: pointer;
+  border-bottom: 1px dashed gray;
+  font-size: 15px;
+}
+
+.reactionShow {
+  opacity: 0;
+  transition: visibility 0s, opacity 1s linear;
+  position: absolute;
+  flex-wrap: nowrap;
+  overflow-y: hidden;
+  bottom: -30px;
+  left: -40px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  transition: 1s;
+  border-radius: 50px;
+  cursor: pointer;
+  background: var(--darkRightBgColor);
+  border: 1px solid var(--lightBgListItemColor);
+  padding: 3px;
+}
+
+.reactionShow:hover {
+  transform: scale(1.1);
+  height: 145px;
+  overflow-y: auto;
+  padding: 5px 0;
+}
+
+.reactionShow::-webkit-scrollbar {
+  width: 0;
+}

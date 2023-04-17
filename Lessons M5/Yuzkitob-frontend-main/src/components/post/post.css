@@ -1,0 +1,147 @@
+.post {
+  width: 80%;
+  margin: 30px auto;
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  border: 2px solid var(--darkListOutlineColor);
+  box-shadow: 1px 5px 15px 0px black;
+}
+
+.dark-version .post {
+  background: var(--darkBgColor);
+  box-shadow: 1px 5px 15px 0px var(--darkMainColor);
+  border: 1px solid var(--darkListOutlineColor);
+  color: var(--darkColorPost);
+}
+
+
+.postWrapper {
+  padding: 10px;
+}
+
+.postTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.postTopLeft {
+  display: flex;
+  align-items: center;
+}
+
+.postProfileImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.postUsername {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 10px;
+}
+
+.postDate {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: normal;
+  color: rgb(65, 65, 65);
+}
+
+.postDateIcon {
+  font-size: 15px !important;
+  margin-right: 5px;
+}
+
+.dark-version .postDate {
+  color: #999;
+}
+
+.postCenter {
+  margin: 20px 0;
+}
+
+.postImg {
+  margin-top: 20px;
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  background: #000;
+  border-radius: 10px;
+  border: 1px solid var(--darkMainColor);
+}
+
+.postBottom {
+  display: flex;
+  align-items: center;
+}
+
+.postBottomLeft {
+  width: 70%;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+}
+
+.postReactionButton {
+  display: flex;
+  align-items: center;
+  padding: 2px 5px;
+  border-radius: 50px;
+  cursor: pointer;
+  padding-right: 10px;
+  margin-right: 7px;
+  border: 1px solid white;
+  margin-bottom: 5px;
+  color: var(--darkColorPost);
+  background: rgba(0, 4, 66, 0.795);
+}
+
+.selectedReaction {
+  background: rgb(0, 17, 255) !important;
+}
+
+.dark-version .selectedReaction {
+  background: rgb(0, 4, 59);
+}
+
+.reactIcon {
+  width: 20px;
+  height: 20px;
+  font-size: 20px !important;
+  object-fit: cover;
+  cursor: pointer;
+  margin-right: 2px;
+  border: none;
+  background: none;
+}
+
+.postLikeCounter {
+  font-size: 17px;
+  margin: 0;
+  padding: 0;
+}
+
+.postBottomRight {
+  height: 100%;
+  flex: 1;
+  text-align: right;
+}
+
+.postCommentText {
+  position: relative;
+  flex: 1;
+  cursor: pointer;
+  border-bottom: 1px dashed gray;
+  font-size: 15px;
+}
+
+.postCommentIcon {
+  position: relative;
+}
+
+.postCommentsCounter {}

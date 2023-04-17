@@ -1,0 +1,31 @@
+.explore {
+  height: 100vh;
+  display: flex;
+  background: white;
+  color: #000;
+  background: radial-gradient(circle at 10% 20%, rgb(166, 226, 229) 0%, rgb(198, 232, 221) 100.2%);
+  background: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+  overflow-y: auto;
+}
+
+.explore.dark-version {
+  background: #222;
+  color: #fff;
+}
+
+.exploreRight {
+  width: calc(100% - 300px);
+  overflow: hidden;
+}
+
+.feedContainer {
+  width: 70%;
+  margin: auto;
+}
+
+
+@media only screen and (max-width: 900px) {
+  .exploreRight {
+    width: calc(100% - 100px);
+  }
+}

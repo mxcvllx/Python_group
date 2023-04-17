@@ -1,0 +1,124 @@
+.rightbar {
+  flex: 2.3;
+  border-radius: 10px;
+  padding: 20px;
+  color: #000;
+  border: 2px solid var(--darkListOutlineColor);
+  box-shadow: 1px 5px 15px 0px black;
+}
+
+.dark-version .rightbar {
+  box-shadow: 1px 5px 10px 0px var(--darkMainColor);
+  border: 1px solid var(--darkListOutlineColor);
+  color: var(--darkColorPost);
+}
+
+.rightbarTitle {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 25px;
+  margin-left: 10px;
+}
+
+.rightbarFriendList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.rightbarTitle {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.rightbarInfo {
+  margin-bottom: 30px;
+}
+
+.rightbarInfoItem {
+  margin-bottom: 10px;
+}
+
+.rightbarInfoKey {
+  font-weight: 500;
+  margin-right: 15px;
+  color: #555;
+}
+
+.rightbarInfoValue {
+  font-weight: 300;
+}
+
+.rightbarFollowings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.rightbarFollowing {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 5px;
+  transition: 1s;
+  box-shadow: 1px 5px 15px 0px black;
+  border: 2px solid var(--darkListOutlineColor);
+}
+
+.rightbarFollowing:hover {
+  box-shadow: 1px 10px 20px 5px black;
+}
+
+.dark-version .rightbarFollowing {
+  box-shadow: 1px 5px 15px 0px var(--darkBorderShadow);
+  border: 2px solid var(--darkListOutlineColor);
+}
+
+.dark-version .rightbarFollowing:hover {
+  box-shadow: 1px 10px 20px 5px var(--darkBorderShadow);
+}
+
+.rightbarFollowingImg {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.rightbarFollowingName {
+  text-align: center;
+  color: #000;
+}
+
+.dark-version .rightbarFollowingName {
+  color: #fff;
+}
+
+.rightbarFollowButton {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border: none;
+  background-color: #1872f2;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.rightbarFollowButton:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .rightbar {
+    flex: 2;
+  }
+}

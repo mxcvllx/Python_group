@@ -1,0 +1,22 @@
+.notFound {
+  flex: 1;
+  display: flex;
+  height: 100vh;
+  background: var(--lightModeBgGradient);
+}
+
+.notFound.dark-version {
+  background: var(--darkRightBgColor);
+  color: #fff;
+}
+
+.notFoundRight {
+  overflow-y: auto;
+  width: calc(100% - 300px);
+  height: 100vh;
+  font-size: 200px;
+  color: var(--darkMainColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -2,5 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Lessons M5/Django_backend" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Lessons M5/P10-book_store" vcs="Git" />
   </component>
 </project>

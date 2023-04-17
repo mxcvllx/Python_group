@@ -1,0 +1,13 @@
+.home {
+  display: flex;
+  width: 100%;
+  background: white;
+  color: #000;
+  height: 100vh;
+  background: var(--lightModeBgGradient);
+}
+
+.home.dark-version {
+  background: #222;
+  color: #fff;
+}

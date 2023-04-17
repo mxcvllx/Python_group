@@ -1,0 +1,202 @@
+.emojis {
+  position: absolute;
+  user-select: none;
+}
+
+.emojiButton {
+  position: absolute;
+  right: 17%;
+  background: none;
+  border: none;
+  font-size: 30px !important;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.dark-version .emojiButtonIcon {
+  color: var(--darkMainColor);
+}
+
+.emojisAllContainer {
+  position: absolute;
+  width: 370px;
+  height: 430px;
+  top: -445px;
+  right: -80px;
+  border-radius: 20px;
+  background: var(--lightListOutlineColor);
+  color: var(--lightBgListItemColor);
+  border: 3px solid var(--darkMainColor);
+  border-right: none;
+  -prefix-animation: slide 1s ease 3.5s forwards;
+  animation: fadeIn 1s;
+}
+
+.tabs {
+  display: flex;
+  width: 100%;
+}
+
+.tabsUl {
+  width: 100%;
+  list-style: none;
+  justify-content: center;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  border-bottom: 3px solid var(--darkMainColor);
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.tabsItem {
+  padding: 10px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.5s;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.tabsItem:hover {
+  background: var(--darkMainColor);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+}
+
+.tabsItem.active {
+  background: var(--darkMainColor);
+  color: #000;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.tabContents {
+  overflow-y: auto;
+}
+
+.tabContents::-webkit-scrollbar {
+  width: 4px;
+}
+
+.tabContentItem {
+  display: block;
+  padding: 5px;
+  flex-wrap: wrap;
+  height: 345px;
+  text-align: start;
+}
+
+.emojiItem {
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  padding: 3px;
+  margin: 2px;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  border: 1px solid var(--darkMainColor);
+  background: rgba(0, 4, 255, 0.4);
+  transition: 0.4s linear;
+}
+
+.emojiItem:hover {
+  background: var(--darkMainColor);
+  border-radius: 10px;
+}
+
+.emojiItem:focus {
+  outline: none;
+}
+
+.emojisTitle {
+  text-align: center;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin: 10px 0 5px 0;
+}
+
+.searchEmojiCont {
+  position: absolute;
+  bottom: 0;
+  height: 35px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.searchEmojiIcon {
+  position: absolute;
+  text-align: center;
+  left: 10px;
+  font-size: 25px !important;
+}
+
+.searchEmojiInput {
+  width: 100%;
+  height: 35px;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  padding: 3px 45px;
+  color: #fff;
+  font-size: 17px;
+  border-top: 3px solid var(--darkMainColor);
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.d-none {
+  animation: fadeOut 1s;
+  display: none;
+}
+
+.gifsItem {
+  height: 160px;
+  width: 160px;
+  object-fit: cover;
+  margin: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 1s;
+  border: 2px solid var(--darkMainColor);
+  user-select: none;
+}
+
+.gifsItem:hover {
+  transform: scale(1.1);
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-prefix-keyframes slide {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 300px;
+  }
+}

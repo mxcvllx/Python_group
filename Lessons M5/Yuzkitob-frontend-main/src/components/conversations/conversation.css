@@ -1,0 +1,39 @@
+.conversation {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #1775ee;
+  color: #fff;
+  border-radius: 10px;
+  transition: 1s;
+  margin-bottom: 10px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border: 1px solid blue;
+}
+
+.conversation:hover {
+  transform: scale(1.05);
+  background-color: blue;
+  border-radius: 50px;
+  border: 1px solid black;
+}
+
+.conversationImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.conversationName {
+  font-weight: 500;
+}
+
+.conversationDescMessage {
+  margin-top: 5px;
+  font-size: 14px;
+  display: block;
+  color: #fff555;
+}

@@ -1,0 +1,60 @@
+.chatOnlineFriend {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #1775ee;
+  color: #fff;
+  border-radius: 10px;
+  transition: 1s;
+  margin-bottom: 10px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border: 1px solid blue;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.chatOnlineFriend:hover {
+  transform: scale(1.1);
+  background-color: blue;
+  border-radius: 50px;
+  border: 1px solid black;
+}
+
+.chatOnlineImgContainer {
+  position: relative;
+  margin-right: 15px;
+}
+
+.chatOnlineImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid white;
+}
+
+.chatOnlineBadge {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: limegreen;
+  top: 0;
+  right: -5px;
+  border: 1px solid white;
+}
+
+.chatOnlineName {
+  font-weight: 500;
+  text-shadow: 2px 2px 2px black;
+}
+
+.conversationDescMessage {
+  font-size: small;
+  display: block;
+  color: #999;
+}
+
+.usersLink {
+  text-decoration: none;
+}
