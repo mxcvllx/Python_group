@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <div class="container mt-5 mb-3">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ book.image.url }}" alt="Product Image" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h2>{{ book.title }}</h2>
+                <p>{{ book.description }}</p>
+                <p><b>Author:</b> {{ book.author.name }}</p>
+                <p><b>Publication:</b> {{ book.pub_year }}</p>
+                <p><b>Publication date:</b> {{ book.page_size }}</p>
+                <p><b>Language:</b> {{ book.lang }}</p>
+                <h3>Price: {{ book.price }}</h3>
+                <button class="btn btn-primary">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

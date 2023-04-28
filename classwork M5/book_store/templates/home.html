@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    HomePage
+{% endblock %}
+
+{% block content %}
+    <div class="container custom-home">
+        <div class="row">
+            {% for book in books %}
+                <div class="col-md-4 card border">
+                    <div class="card border mb-4 box-shadow h-50 card-hover">
+                        <img class="card-img-top" src="{{ book.image.url }}" alt="Bu Yerda Rasm Bor!">
+                        <div class="card-body">
+                            <h5 class="card-title custom-title">
+                                <a href="{% url 'book_detail' book.id %}">{{ book.title }}</a>
+                            </h5>
+                            {% if book.description|length > 80 %}
+                                <p class="card-text">{{ book.description|slice:80 }}</p>
+                            {% else %}
+                                <p class="card-text">{{ book.description }}</p>
+                            {% endif %}
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="{% url 'book_detail' book.id %}" class="btn btn-sm btn-outline-secondary">
+                                        More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
