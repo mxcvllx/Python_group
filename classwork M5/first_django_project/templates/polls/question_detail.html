@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <form action="{% url 'polls:question_vote' question.id %}" method="post">
+            {% csrf_token %}
+            <b>Text:</b> {{ question.text }}
+            <br>
+            <b>Publication date:</b> {{ question.pub_date }}
+            {% for choice in question.choices.all %}
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="choice" value="{{ choice.id }}"
+                           id="{{ choice.id }}">
+                    <label class="form-check-label" for="{{ choice.id }}">
+                        {{ choice.text }}
+                    </label>
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-success">Submit</button>
+            <br>
+            <br>
+            <a class="mt-5" href="{% url 'polls:questions_list' %}">
+                <button type="button" class="btn btn-outline-primary">Back to questions</button>
+            </a>
+        </form>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+{% endblock %}

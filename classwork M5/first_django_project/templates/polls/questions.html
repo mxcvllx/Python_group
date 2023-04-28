@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2>Questions list page</h2>
+
+        <div class="list-group">
+            {% for question in questions %}
+                <a href="{% url 'polls:question_detail' question.id %}">
+                    <button type="button" class="list-group-item list-group-item-action">{{ question.text }}</button>
+                </a>
+            {% endfor %}
+        </div>
+
+
+    </div>
+{% endblock %}
