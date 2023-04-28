@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <section class="product">
+    <div class="container">
+        <div class="product-box">
+            {% for Pallets in pallets %}
+                    <div class="product-item">
+                        <img class="card-img-top" src="../{{ Pallets.image.url }}" alt=":">
+                        <div class="product-item-box">
+                            <h5 class="item-title">
+                                {{ Pallets.title }}
+                            </h5>
+                            {% if Pallets.description|length > 20 %}
+                                <p class="item-subtext">{{ Pallets.description|slice:80 }}</p>
+                            {% else %}
+                                <p class="item-subtext">{{ Pallets.description }}</p>
+                              {% endif %}
+                                    <a href="{% url 'pallets_detail' Pallets.id %}" class="item-button">
+                                        More
+                                    </a>
+                        </div>
+                    </div>
+        {% endfor %}
+        </div>
+        </div>
+    </div>
+    </section>
+{% endblock %}
