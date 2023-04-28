@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Hello Django from <span style='color:red'>P10</span></h1>
+    <h1>Polls page</h1>
+    <br>
+    <a href="{% url 'polls:questions_list' %}">Click to questions</a>
+{% endblock %}

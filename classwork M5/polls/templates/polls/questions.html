@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Questions list page</h2>
+    <ol>
+        {% for question in questions %}
+            <li>
+                {# <a href="/questions/{{ question.id }}">{{ question.text }}</a>#}
+                <a href="{% url 'polls:question_detail' question.id %}">{{ question.text }}</a>
+            </li>
+        {% endfor %}
+    </ol>
+{% endblock %}
