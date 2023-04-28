@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../static/images/icon.svg" />
+    <link rel="stylesheet" href="../static/libraries/Slick/slick.css" />
+    <link rel="stylesheet" href="../static/libraries/Aos/aos.css" />
+    <link rel="stylesheet" href="../static/style/style.css" />
+    <title>Продажа поддонов в - Москве</title>
+    <style>
+      .newtons-cradle {
+        --uib-size: 40px;
+        --uib-speed: 1.4s;
+        --uib-color: #b19178;
+
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--uib-size);
+        height: var(--uib-size);
+      }
+
+      .newtons-cradle__dot {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 25%;
+        transform-origin: center top;
+      }
+
+      .newtons-cradle__dot::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 25%;
+        border-radius: 50%;
+        background-color: var(--uib-color);
+      }
+
+      .newtons-cradle__dot:first-child {
+        animation: swing var(--uib-speed) linear infinite;
+      }
+
+      .newtons-cradle__dot:last-child {
+        animation: swing2 var(--uib-speed) linear infinite;
+      }
+
+      @keyframes swing {
+        0% {
+          transform: rotate(0deg);
+          animation-timing-function: ease-out;
+        }
+
+        25% {
+          transform: rotate(70deg);
+          animation-timing-function: ease-in;
+        }
+
+        50% {
+          transform: rotate(0deg);
+          animation-timing-function: linear;
+        }
+      }
+
+      @keyframes swing2{
+        0% {
+          transform: rotate(0deg);
+          animation-timing-function: linear;
+        }
+
+        50% {
+          transform: rotate(0deg);
+          animation-timing-function: ease-out;
+        }
+
+        75% {
+          transform: rotate(-70deg);
+          animation-timing-function: ease-in;
+        }
+      }
+      .loader {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fafafa;
+        z-index: 9999;
+        transform: scale(1.5);
+      }
+    </style>
+  </head>
+<body>
+    <div class="loader">
+      <div class="newtons-cradle">
+        <div class="newtons-cradle__dot"></div>
+        <div class="newtons-cradle__dot"></div>
+        <div class="newtons-cradle__dot"></div>
+        <div class="newtons-cradle__dot"></div>
+      </div>
+    </div>
+    <!-- Loader -->
+    <header data-aos="fade-down" data-aos-duration="500" id="top">
+      <section class="header-contact">
+        <div class="container">
+          <ul>
+            <div class="left">
+              <li>
+                <a href="{% url 'homepage' %}"
+                  ><img src="../static/images/header/logo.svg" alt="Монекс" class="logo"
+                /></a>
+              </li>
+            </div>
+            <div class="middle">
+              <li>
+                <a href="#"
+                  ><img src="../static/images/header/map.svg" alt="#" />ООО СТРОЙБРИГ ИНН:
+                  7720484439</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="../static/images/header/clock.svg" alt="#" />Пн-Вс с 9:00 до
+                  20:00</a
+                >
+              </li>
+              <li>
+                <a href="https://mail.google.com/mail/u/3/#inbox?compose=DmwnWsLQzrLxSxWFxxLBrWkdgzQCqwDdVBPBhWBfBmksdvPHXMwTJBKRWmRLHRSPXtKmcWKnZrmb"
+                  ><img
+                    src="../static/images/header/mail.svg"
+                    alt="#"
+                  />pallets.pr.info@gmail.com</a
+                >
+              </li>
+            </div>
+            <div class="right">
+              <li>
+                <a href="tel:+74951557397"
+                  ><img src="../static/images/header/phone.svg" alt="#" />+7 495 155 73
+                  97</a
+                >
+              </li>
+            </div>
+          </ul>
+        </div>
+      </section>
+      <div class="container">
+        <nav data-aos="fade-down">
+          <ul>
+            <li class="nav-items">
+                <a href="{% url 'about_us' %}" class="nav-link">О нас</a></li>
+            <li class="nav-items">
+              <a href="{% url 'products' %}" class="nav-link">Продукция</a>
+            </li>
+            <li class="nav-items">
+              <a href="{% url 'advantages' %}" class="nav-link">Приемущества</a>
+            </li>
+            <li class="nav-items"><a href="{% url 'contacts' %}" class="nav-link">Контакты</a></li>
+          </ul>
+          <a href="#" class="nav-button"
+            ><svg
+              width="20"
+              height="21"
+              viewBox="0 0 20 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_1_992)">
+                <path
+                  d="M12.5579 19.0758C11.9674 19.0758 11.3844 18.9073 10.8857 18.5882C6.54331 15.8088 2.91579 11.9649 0.395448 7.47178C-0.285023 6.25866 -0.0721436 4.72327 0.913162 3.738L2.84405 1.80711C3.60217 1.049 4.83566 1.049 5.59377 1.80711L7.29552 3.50886C8.05364 4.26694 8.05364 5.50047 7.29552 6.25854L6.28938 7.26469C7.73324 9.28276 9.45301 11.0727 11.4111 12.5957L12.522 11.485C13.2801 10.7268 14.5135 10.7269 15.2716 11.485L16.9758 13.1892C17.732 13.9454 17.7336 15.1773 16.9794 15.9354L14.7727 18.1533C14.2729 18.6557 13.6102 18.9763 12.9067 19.0561C12.7905 19.0693 12.674 19.0758 12.5579 19.0758Z"
+                  fill="white"
+                />
+                <path
+                  d="M17.9271 2.12089H11.8696C12.0274 1.93725 12.0611 1.66725 11.9331 1.44566C11.7712 1.16514 11.4125 1.06908 11.132 1.23102L9.45466 2.19943C9.27321 2.30417 9.16144 2.49778 9.16144 2.70729C9.16144 2.91681 9.27321 3.11042 9.45466 3.21516L11.132 4.18357C11.2244 4.2369 11.3252 4.26223 11.4247 4.26223C11.6274 4.26223 11.8245 4.15706 11.9331 3.96893C12.0611 3.74733 12.0274 3.47737 11.8696 3.29374H17.9271C18.423 3.29374 18.8265 3.69717 18.8265 4.19311C18.8265 4.68905 18.423 5.09248 17.9271 5.09248H13.1158C12.7919 5.09248 12.5293 5.35505 12.5293 5.67893C12.5293 6.0028 12.7919 6.26537 13.1158 6.26537H17.9271C19.0698 6.26537 19.9994 5.33578 19.9994 4.19311C19.9994 3.05048 19.0698 2.12089 17.9271 2.12089Z"
+                  fill="white"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_1_992">
+                  <rect
+                    width="20"
+                    height="20"
+                    fill="white"
+                    transform="translate(0 0.112549)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
+            Обратный звонок</a
+          >
+        </nav>
+      </div>
+      <section class="header-slider">
+        <div class="slider-box">
+          <div class="slider-item">
+            <div class="slider-info">
+              <div class="slider-text">
+                <h2 class="slider-title">Продажа поддонов Б/У в Москве</h2>
+                <h3 class="slider-subtitle">
+                  Доставка осуществляется круглосуточно, <br />
+                  в любое удобное время
+                </h3>
+                <a href="{% url 'products' %}" class="slider-button">Подробнее</a>
+              </div>
+            </div>
+          </div>
+          <div class="slider-item">
+            <div class="slider-info">
+              <div class="slider-text">
+                <h2 class="slider-title">
+                  Продажа поддонов Б/У в Санк-Питербурге
+                </h2>
+                <h3 class="slider-subtitle">
+                  Доставка осуществляется круглосуточно, <br />
+                  в любое удобное время
+                </h3>
+                <a href="{% url 'products' %}" class="slider-button">Подробнее</a>
+              </div>
+            </div>
+          </div>
+          <div class="slider-item">
+            <div class="slider-info">
+              <div class="slider-text">
+                    <h2 class="slider-title">Продажа поддонов Б/У в Минске</h2>
+                <h3 class="slider-subtitle">
+                  Доставка осуществляется круглосуточно, <br />
+                  в любое удобное время
+                </h3>
+                <a href="{% url 'products' %}" class="slider-button">Подробнее</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <section class="product">
+    <div class="container">
+        <h2>ДЕРЕВЯННЫЕ ПОДДОНЫ Б/У</h2>
+        <div class="product-box">
+            {% for Pallets in pallets %}
+                <div class="product-item" data-aos="flip-up" data-aos-duration="500">
+                        <img class="card-img-top" src="../{{ Pallets.image.url }}" alt="#">
+                        <div class="product-item-box">
+                            <h3 class="item-title">
+                                {{ Pallets.title }}
+                            </h3>
+                            {% if Pallets.description|length > 20 %}
+                                <p class="item-subtext">{{ Pallets.description|slice:20 }}</p>
+                            {% else %}
+                                <p class="item-subtext">{{ Pallets.description }}</p>
+                            {% endif %}
+                                <a href="{% url 'pallets_detail' Pallets.id %}" class="item-button">Подробнее</a>
+                            </div>
+                    </div>
+            {% endfor %}
+                </div>
+        </div>
+    </div>
+    </section>
+    <section class="about-us">
+      <div class="container">
+        <h2 data-aos="fade-right">О нас</h2>
+        <div class="about-us-box">
+          <div class="about-us-item" data-aos="flip-down">
+            <h3>Мы</h3>
+            <h4>10 ЛЕТ</h4>
+            <h5>на паллетном<br />рынке</h5>
+          </div>
+          <div class="about-us-item" data-aos="flip-down">
+            <h3>У нас</h3>
+            <h4>12</h4>
+            <h5>складов по<br />ЦФО</h5>
+          </div>
+          <div class="about-us-item" data-aos="flip-down">
+            <h3>Доставка</h3>
+            <h4>24 ЧАСА</h4>
+            <h5>в сутки, в<br />любое время</h5>
+          </div>
+          <div class="about-us-item" data-aos="flip-down">
+            <h3>У нас</h3>
+            <h4>50 +</h4>
+            <h5>постоянных<br />клиентов</h5>
+          </div>
+          <div class="about-us-item" data-aos="flip-down">
+            <h3>Ежегодно</h3>
+            <h4>300 000 +</h4>
+            <h5>единиц<br />годовой оборот</h5>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="benefit">
+      <div class="container">
+        <h2 data-aos="fade-right">Почему с нами выгодно</h2>
+        <div class="benefit-box">
+          <div
+            class="benefit-item"
+            data-aos="flip-down"
+            data-aos-duration="200"
+          >
+            <h3>01</h3>
+            <h4>НАЛИЧИЕ ТОВАРА</h4>
+            <h5>
+              Подходящие поддоны есть всегда!<br />Мы подберём необходимый
+              паллет.
+            </h5>
+          </div>
+          <div
+            class="benefit-item"
+            data-aos="flip-down"
+            data-aos-duration="400"
+          >
+            <h3>02</h3>
+            <h4>СТАБИЛЬНОСТЬ</h4>
+            <h5>
+              Наша надежность подтверждена<br />рекомендациями ведущих<br />компаний.
+            </h5>
+          </div>
+          <div
+            class="benefit-item"
+            data-aos="flip-down"
+            data-aos-duration="600"
+          >
+            <h3>03</h3>
+            <h4>ПРОФЕССИОНАЛИЗМ</h4>
+            <h5>
+              Анализируем потребности <br />
+              и усовершенствуем услуги.
+            </h5>
+          </div>
+          <div
+            class="benefit-item"
+            data-aos="flip-down"
+            data-aos-duration="800"
+          >
+            <h3>04</h3>
+            <h4>КАЧЕСТВО</h4>
+            <h5>У нас многоэтапный контроль<br />качества продукции</h5>
+          </div>
+          <div
+            class="benefit-item"
+            data-aos="flip-down"
+            data-aos-duration="1000"
+          >
+            <h3>05</h3>
+            <h4>ЭКОНОМИЧНОСТЬ</h4>
+            <h5>
+              Знаем секреты<br />экономии в области паллетной<br />логистики.
+              Сократите Ваши затраты!
+            </h5>
+          </div>
+          <div
+            class="benefit-item"
+            data-aos="flip-down"
+            data-aos-duration="1400"
+          >
+            <h3>06</h3>
+            <h4>КРУГЛОСУТОЧНАЯ ДОСТАВКА</h4>
+            <h5>
+              Быстрая и аккуратная доставка<br />собственным транспортом 24/7.
+            </h5>
+          </div>
+          <div
+            class="benefit-item"
+            data-aos="flip-down"
+            data-aos-duration="1200"
+          >
+            <h3>07</h3>
+            <h4>ОТСРОЧКА ПЛАТЕЖА</h4>
+            <h5>Мы готовы пойти на встречу нашим<br />заказчикам.</h5>
+          </div>
+          <div
+            class="benefit-item"
+            data-aos="flip-down"
+            data-aos-duration="1000"
+          >
+            <h3>08</h3>
+            <h4>ОПЕРАТИВНОСТЬ</h4>
+            <h5>Оперативный подход, и грамотно<br />выстроенная логистика.</h5>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="support">
+      <div class="container">
+        <h2 data-aos="fade-right" data-aos="fade-right">
+          У вас остались вопросы?
+        </h2>
+        <div class="support-box">
+          <div class="support-left" data-aos="fade-right">
+            <img src="../static/images/support/1.png" alt="#" />
+            <div class="support-left-text">
+              <h3>
+                Мы с удовольствием ответим на <br />
+                все вопросы и проконсультируют <br />
+                по товарным позициям.
+              </h3>
+            </div>
+          </div>
+          <form
+            data-aos="fade-left"
+            class="support-right"
+            id="form"
+            action="https://api.apispreadsheets.com/data/mbghqFr0FfC0wqL8/"
+          >
+            <h4>Отправить заявку</h4>
+            <input
+              type="text"
+              class="name"
+              placeholder="Ваше имя"
+              name="name"
+              id="name"
+            />
+            <input
+              type="tel"
+              class="phone-number"
+              placeholder="Номер телефона"
+              name="phone"
+              id="phone"
+            />
+            <input
+              type="text"
+              class="text"
+              placeholder="Введите текст"
+              name="text"
+              id="text"
+            />
+            <label class="checkbox-box">
+              <input type="checkbox" class="checkbox" />
+              Даю согласие на обработку персональных данных
+              <input
+                type="submit"
+                class="support-button"
+                placeholder="Отправить"
+                id="sub"
+              />
+            </label>
+            <a href="#" class="suppotr-button-subtext"
+              ><img src="../static/images/support/2.svg" alt="#" />Ваши данные защищены</a
+            >
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="footer-box">
+          <div class="footer-item">
+            <img src="../static/images/footer/1.svg" alt="#" />
+            <p>© Все права защищены.</p>
+          </div>
+          <div class="footer-item">
+            <a href="{% url 'about_us' %}">О нас</a>
+            <a href="{% url 'products' %}">Продукция</a>
+            <a href="{% url 'advantages' %}">Приемущества</a>
+            <a href="{% url 'contacts' %}">Контакты</a>
+          </div>
+          <div class="footer-item">
+            <a href="#"
+              ><img src="../static/images/footer/2.svg" alt="#" />ООО СТРОЙБРИГ ИНН:<br />7720484439
+              ОГРН: <br />
+              1197746616649</a
+            >
+            <a href="https://mail.google.com/mail/u/3/#inbox?compose=DmwnWstvLLRPwLjGMQqMnhQvnwnRkfVDdpPsjCSftXZZtkMPWNXTTPWDmMcXmCcKCGTsstJzkFhv"
+              ><img src="../static/images/footer/3.svg" alt="#" />pallets.pr.info@gmail.com</a
+            >
+            <a href="#"
+              ><img src="../static/images/footer/6.svg" alt="#" />Пн-Вс с 9:00 до 20:00</a
+            >
+          </div>
+          <div class="footer-item">
+            <h3>Заказы принимаются круглосуточно</h3>
+            <a href="#" class="button"
+              ><img src="../static/images/footer/4.svg" alt="#" />Обратный звонок</a
+            >
+            <a href="#" class="number"
+              ><img src="../static/images/footer/5.svg" alt="#" />+7 495 155 73 97</a
+            >
+          </div>
+        </div>
+        <h4>Политика конфиденциальности</h4>
+      </div>
+    </footer>
+<!--  -->
+    <a href="#">
+      <div class="bottom-to-top">></div>
+    </a>
+
+    <!-- This code creator Narllkx and Odiljon -->
+    <!-- --------------------------------Script-------------------------------- -->
+    <script src="../static/libraries/jQuery/jquery-3.6.4.min.js"></script>
+    <script src="../static/libraries/Slick/slick.min.js"></script>
+    <script src="../static/libraries/Aos/aos.js"></script>
+    <script src="../static/script/script.js"></script>
+    <!-- --------------------------------Script-------------------------------- -->
+  </body>
+</html>
