@@ -4,6 +4,20 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources" />
       <excludeFolder url="file://$MODULE_DIR$/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/classwork M5/book_store/media" />
+      <excludeFolder url="file://$MODULE_DIR$/EXAMS/exam P10 Toirjonov Odiljon M1/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/EXAMS/exam P10 Toirjonov Odiljon M2/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/EXAMS/exam P10 Toirjonov Odiljon M5/static/images/media" />
+      <excludeFolder url="file://$MODULE_DIR$/EXAMS/exam P10 Toirjonov Odiljon M6/media" />
+      <excludeFolder url="file://$MODULE_DIR$/Lessons M5/Django_backend/.idea/dataSources" />
+      <excludeFolder url="file://$MODULE_DIR$/Lessons M5/django_ecommerce_mod5-master/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/Lessons M5/django_ecommerce_mod5-master/env" />
+      <excludeFolder url="file://$MODULE_DIR$/Lessons M5/P10-book_store/.idea/dataSources" />
+      <excludeFolder url="file://$MODULE_DIR$/Lessons M5/P10-book_store/media" />
+      <excludeFolder url="file://$MODULE_DIR$/Lessons M5/portfolio-website-master/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/Lessons M5/Project Pallets End by Narllkx and Odiljon/static/images/media" />
+      <excludeFolder url="file://$MODULE_DIR$/Lessons M5/Yuzkitob-frontend-main/src/pages/home/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/Lessons M5/Yuzkitob-frontend-main/.idea" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
