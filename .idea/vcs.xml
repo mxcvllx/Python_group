@@ -4,7 +4,5 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Lessons M5/Django_backend" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Lessons M5/P10-book_store" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/classwork M6/ecommerce_api" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/classwork M6/ecourseuz-api" vcs="Git" />
   </component>
 </project>
