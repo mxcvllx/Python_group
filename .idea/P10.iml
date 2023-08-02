@@ -18,8 +18,9 @@
       <excludeFolder url="file://$MODULE_DIR$/Lessons M5/Project Pallets End by Narllkx and Odiljon/static/images/media" />
       <excludeFolder url="file://$MODULE_DIR$/Lessons M5/Yuzkitob-frontend-main/src/pages/home/dist" />
       <excludeFolder url="file://$MODULE_DIR$/Lessons M5/Yuzkitob-frontend-main/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.10 (Python_group)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
